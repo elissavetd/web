@@ -169,7 +169,7 @@
       <span class="role">Bauingenieurin · Wasserbau</span>
     </div>
     <div class="top-contact">
-      <a href="mailto:elisabetdim@gmail.com">elisabetdim@gmail.com</a>
+      <span class="email-obf" data-u="elisabetdim" data-d="gmail.com"></span>
       <span>+41 78 742 63 25</span>
       <span>8038 Zürich</span>
     </div>
@@ -412,7 +412,7 @@
 <footer id="kontakt">
   <div class="wrap">
     <p><strong>Elissavet Dimitriou</strong> · 8038 Zürich, Schweiz</p>
-    <p><a href="mailto:elisabetdim@gmail.com">elisabetdim@gmail.com</a> · +41 78 742 63 25</p>
+    <p><span class="email-obf" data-u="elisabetdim" data-d="gmail.com"></span> · +41 78 742 63 25</p>
   </div>
 </footer>
 
@@ -434,6 +434,18 @@
   window.addEventListener('scroll', function(){
     const btn = document.getElementById('topBtn');
     if (window.scrollY > 400){ btn.classList.add('show'); } else { btn.classList.remove('show'); }
+  });
+
+  // Build email links at runtime so the address isn't sitting in the page
+  // source as plain text / a live mailto: link for scrapers to harvest.
+  document.querySelectorAll('.email-obf').forEach(function(el){
+    const user = el.getAttribute('data-u');
+    const domain = el.getAttribute('data-d');
+    const address = user + '@' + domain;
+    const link = document.createElement('a');
+    link.href = 'mailto:' + address;
+    link.textContent = address;
+    el.appendChild(link);
   });
 </script>
 
