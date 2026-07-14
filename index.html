@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elissavet Dimitriou — Bauingenieurin · Wasserbau</title>
+<meta name="description" content="Portfolio von Elissavet Dimitriou — Bauingenieurin mit Erfahrung im Wasserbau, Infrastruktur und Operations Management.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#e63329;
+    --red-dark:#c22a21;
+    --black:#1a1a1a;
+    --gray:#5a5f63;
+    --gray-light:#8b9095;
+    --bg:#ffffff;
+    --panel:#f7f7f8;
+    --border:#e4e5e7;
+    --maxw:960px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Barlow", Arial, Helvetica, sans-serif;
+    background:var(--bg);
+    color:var(--black);
+    line-height:1.55;
+  }
+  h1,h2,h3,.headline{
+    font-family:"Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+    font-weight:700;
+    text-transform:none;
+    letter-spacing:.2px;
+  }
+  a{color:var(--red);}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+
+  /* Cut-corner flag shape, signature IUB motif */
+  .flag{
+    background:var(--red); color:#fff;
+    clip-path: polygon(0 0, 92% 0, 100% 30%, 100% 100%, 0 100%);
+    padding:10px 26px 10px 16px;
+    display:inline-block;
+    font-family:"Barlow Condensed", Arial, sans-serif;
+    font-weight:700;
+  }
+
+  /* Header */
+  header.top{
+    border-bottom:1px solid var(--border);
+    padding:22px 0;
+  }
+  header.top .wrap{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px;}
+  .brand{display:flex; align-items:baseline; gap:14px;}
+  .brand h1{font-size:1.8rem; margin:0; color:var(--black); font-weight:700;}
+  .brand .divider{width:2px; height:26px; background:var(--red); display:inline-block;}
+  .brand .role{
+    font-family:"Barlow Condensed", Arial, sans-serif;
+    color:var(--red); font-weight:600; font-size:1rem; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .top-contact{display:flex; gap:20px; font-size:.85rem; color:var(--gray); flex-wrap:wrap;}
+  .top-contact a{color:var(--black); text-decoration:none; font-weight:600;}
+  .top-contact a:hover{color:var(--red);}
+
+  nav.tabs{
+    background:#fff; position:sticky; top:0; z-index:10;
+    border-bottom:1px solid var(--border);
+    box-shadow:0 2px 6px rgba(0,0,0,.04);
+  }
+  nav.tabs .wrap{display:flex; gap:2px; overflow-x:auto;}
+  nav.tabs a{
+    color:var(--black); text-decoration:none; font-size:.92rem; font-weight:600;
+    font-family:"Barlow Condensed", Arial, sans-serif; text-transform:uppercase; letter-spacing:.4px;
+    padding:14px 16px; white-space:nowrap; border-bottom:3px solid transparent;
+  }
+  nav.tabs a:hover{color:var(--red); border-bottom-color:var(--red);}
+
+  /* Hero strip below nav: tagline */
+  .tagline-strip{background:var(--panel); padding:26px 0; border-bottom:1px solid var(--border);}
+  .tagline-strip p{margin:0; color:var(--gray); font-size:1.02rem; max-width:680px;}
+
+  main{padding:44px 0 24px;}
+  section{margin-bottom:56px;}
+  section .sec-head{display:flex; align-items:center; gap:14px; margin-bottom:18px;}
+  section .sec-head .flag{font-size:1.15rem;}
+  section .sec-head .num{
+    font-family:"Barlow Condensed", Arial, sans-serif; font-weight:700; color:var(--gray-light); font-size:1.1rem;
+  }
+  section > .lead{color:var(--gray); font-size:.9rem; margin:-6px 0 20px;}
+
+  /* Profile */
+  .profile-card{
+    background:var(--panel); border:1px solid var(--border); border-left:4px solid var(--red);
+    padding:22px 26px; font-size:.98rem;
+  }
+
+  /* Accordion */
+  .acc-item{
+    background:#fff; border:1px solid var(--border); border-radius:2px;
+    margin-top:10px; overflow:hidden; transition:border-color .2s ease;
+  }
+  .acc-item:hover{border-color:#d3d5d8;}
+  .acc-head{
+    display:flex; justify-content:space-between; align-items:center; gap:16px;
+    padding:16px 20px; cursor:pointer; user-select:none;
+  }
+  .acc-head:hover{background:var(--panel);}
+  .acc-head .title{font-weight:600; color:var(--black); font-size:1rem; font-family:"Barlow Condensed", Arial, sans-serif;}
+  .acc-head .meta{color:var(--gray); font-size:.83rem; font-weight:400; display:block; margin-top:2px; font-family:"Barlow", Arial, sans-serif;}
+  .acc-head .chev{
+    color:var(--red); font-size:1.2rem; font-weight:700; transition:transform .25s ease; flex-shrink:0;
+  }
+  .acc-item.open .chev{transform:rotate(180deg);}
+  .acc-body{
+    max-height:0; overflow:hidden; transition:max-height .3s ease;
+    padding:0 20px; font-size:.92rem; color:var(--black);
+  }
+  .acc-item.open .acc-body{padding:0 20px 20px;}
+  .acc-body p{margin:8px 0;}
+  .acc-body ul{margin:8px 0; padding-left:20px;}
+  .acc-body li{margin:4px 0;}
+
+  .facts{width:100%; border-collapse:collapse; margin-top:12px; font-size:.87rem;}
+  .facts td{padding:7px 10px; border-bottom:1px solid var(--border); vertical-align:top;}
+  .facts td:first-child{color:var(--gray); width:38%; font-weight:600;}
+
+  .tag{
+    display:inline-block; background:#fdeceb; color:var(--red-dark); border:1px solid #f6c9c5;
+    border-radius:2px; padding:4px 12px; font-size:.8rem; margin:3px 5px 3px 0; font-weight:500;
+  }
+
+  .skills-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:4px;}
+  @media (max-width:640px){ .skills-grid{grid-template-columns:1fr;} }
+  .skills-grid .box{background:#fff; border:1px solid var(--border); padding:20px;}
+  .skills-grid h3{margin:0 0 12px; font-size:1.05rem; color:var(--black); font-weight:700;}
+
+  .cert-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:4px;}
+  .cert-card{background:#fff; border:1px solid var(--border); border-top:3px solid var(--red); padding:16px 18px;}
+  .cert-card .name{font-weight:700; color:var(--black); font-size:.95rem; font-family:"Barlow Condensed", Arial, sans-serif;}
+  .cert-card .detail{color:var(--gray); font-size:.82rem; margin-top:4px;}
+
+  footer{
+    background:var(--black); color:#c9cacc; padding:30px 0; font-size:.85rem; text-align:center;
+    margin-top:20px;
+  }
+  footer strong{color:#fff;}
+  footer a{color:#fff;}
+
+  .btn-top{
+    position:fixed; bottom:22px; right:22px; background:var(--red); color:#fff;
+    width:44px; height:44px; display:flex; align-items:center; justify-content:center;
+    text-decoration:none; box-shadow:0 2px 10px rgba(0,0,0,.25); opacity:0; pointer-events:none;
+    transition:opacity .25s ease; font-weight:700;
+    clip-path: polygon(0 0, 85% 0, 100% 25%, 100% 100%, 0 100%);
+  }
+  .btn-top.show{opacity:1; pointer-events:auto;}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <h1>Elissavet Dimitriou</h1>
+      <span class="divider"></span>
+      <span class="role">Bauingenieurin · Wasserbau</span>
+    </div>
+    <div class="top-contact">
+      <a href="mailto:elisabetdim@gmail.com">elisabetdim@gmail.com</a>
+      <span>+41 78 742 63 25</span>
+      <span>8038 Zürich</span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="wrap">
+    <a href="#profil">Profil</a>
+    <a href="#erfahrung">Erfahrung</a>
+    <a href="#ausbildung">Ausbildung</a>
+    <a href="#kompetenzen">Kompetenzen</a>
+    <a href="#zertifikate">Zertifikate</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+</nav>
+
+<div class="tagline-strip">
+  <div class="wrap">
+    <p>Projekte von der Machbarkeitsstudie bis zur Realisierung begleiten und mit präziser Planarbeit die Grundlage für Vorhaben schaffen, die Siedlungsräume und Landschaften verändern.</p>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section id="profil">
+    <div class="sec-head"><span class="flag">Profil</span></div>
+    <div class="profile-card">
+      <p>Erfahrene Bauingenieurin (NTUA Athen) mit Praxis im Wasserbau und in interdisziplinären Infrastrukturprojekten sowie mehrjähriger Führungserfahrung im Operations Management. Nach einer bewussten beruflichen Auszeit zur Kinderbetreuung befinde ich mich im gezielten Wiedereinstieg und möchte mein Fachwissen wieder aktiv in den Wasserbau einbringen — mit exakter, strukturierter Planarbeit und enger Zusammenarbeit im Projektteam.</p>
+    </div>
+  </section>
+
+  <section id="erfahrung">
+    <div class="sec-head"><span class="flag">Berufserfahrung</span></div>
+    <p class="lead">Zum Ein-/Ausklappen auf einen Eintrag klicken.</p>
+
+    <div class="acc-item">
+      <div class="acc-head" onclick="toggleAcc(this)">
+        <div><span class="title">Familienmanagement — berufliche Auszeit</span><span class="meta">2024 – 2026</span></div>
+        <span class="chev">▾</span>
+      </div>
+      <div class="acc-body">
+        <p>Bewusste berufliche Auszeit zur Betreuung zweier Kinder unter zwei Jahren. Aktuell im strukturierten beruflichen Wiedereinstieg, idealerweise mit einem Pensum von 60&nbsp;%.</p>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-head" onclick="toggleAcc(this)">
+        <div><span class="title">Operations Manager — VIU Ventures AG, Zürich</span><span class="meta">09.2019 – 09.2024</span></div>
+        <span class="chev">▾</span>
+      </div>
+      <div class="acc-body">
+        <p>Führung eines sechsköpfigen Teams, verantwortlich für zentrale Geschäftsprozesse in Warenlogistik und Versand.</p>
+        <ul>
+          <li>Steuerung von Bestandsmanagement, Qualitätskontrolle und Filialnachschub in der Schweiz</li>
+          <li>Koordination zahlreicher interner und externer Schnittstellen</li>
+          <li>Arbeitszeugnis bestätigt selbständige, exakte Arbeitsweise und Erwartungen „stets in jeder Hinsicht übertroffen“</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-head" onclick="toggleAcc(this)">
+        <div><span class="title">Consulting Engineer — Hydroelectrica, Athen (Griechenland)</span><span class="meta">2014 – 2016</span></div>
+        <span class="chev">▾</span>
+      </div>
+      <div class="acc-body">
+        <p>Konzeption und Ausarbeitung technischer Studien sowie Beantwortung von Ausschreibungen (RFPs) und öffentlichen Vergabeverfahren.</p>
+        <ul>
+          <li>Mitwirkung an mehreren Ingenieurprojekten für öffentliche Wasserversorgungsnetze und Abwasserreinigungsanlagen</li>
+          <li>Gesamtbudget der begleiteten Projekte: ca. 6,5 Mio. Euro</li>
+          <li>Vier Referenzprojekte dieser Zeit sind unter <a href="#portfolio">Portfolio</a> im Detail dargestellt</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-head" onclick="toggleAcc(this)">
+        <div><span class="title">Kundennahe Nebentätigkeiten — diverse Arbeitgeber, Athen</span><span class="meta">2009 – 2012 (Studium)</span></div>
+        <span class="chev">▾</span>
+      </div>
+      <div class="acc-body">
+        <p>Teilzeittätigkeiten während des Studiums:</p>
+        <ul>
+          <li>Transport Survey Assistant (Diavasi Ltd.)</li>
+          <li>Interviewerin, griechisches Statistikamt (EL.STAT.)</li>
+          <li>Verkauf im Einzelhandel</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="ausbildung">
+    <div class="sec-head"><span class="flag">Ausbildung</span></div>
+    <div class="profile-card">
+      <table class="facts">
+        <tr><td>Abschluss</td><td>Diplom-Bauingenieurin (5-jähriges Diplomstudium)</td></tr>
+        <tr><td>Hochschule</td><td>Nationale Technische Universität Athen (NTUA)</td></tr>
+        <tr><td>Vertiefung</td><td>Verkehrswesen und Infrastruktur</td></tr>
+        <tr><td>Abschlussjahr</td><td>2014</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="kompetenzen">
+    <div class="sec-head"><span class="flag">Kompetenzen</span></div>
+    <div class="skills-grid">
+      <div class="box">
+        <h3>Fachliche &amp; methodische Kompetenzen</h3>
+        <span class="tag">Team Leadership</span>
+        <span class="tag">Projektmanagement</span>
+        <span class="tag">Konfliktmanagement</span>
+        <span class="tag">Data Analytics</span>
+        <span class="tag">Qualitätssicherung</span>
+        <span class="tag">Procurement</span>
+        <span class="tag">Supply Chain</span>
+        <span class="tag">Change Management</span>
+      </div>
+      <div class="box">
+        <h3>Software &amp; Tools</h3>
+        <span class="tag">AutoCAD (Certified User)</span>
+        <span class="tag">ALLPLAN (in Einarbeitung)</span>
+        <span class="tag">HEC-RAS</span>
+        <span class="tag">WEST</span>
+        <span class="tag">Excel / M365</span>
+        <span class="tag">Google Workspace</span>
+        <span class="tag">Tableau</span>
+        <span class="tag">Sisense</span>
+        <span class="tag">Asana / Jira / Confluence</span>
+        <span class="tag">Miro</span>
+        <span class="tag">Python</span>
+        <span class="tag">SQL</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="zertifikate">
+    <div class="sec-head"><span class="flag">Zertifikate &amp; Sprachen</span></div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="name">telc Deutsch B2</div>
+        <div class="detail">Prädikat „Gut“ (253/300 Punkte) · 2017</div>
+      </div>
+      <div class="cert-card">
+        <div class="name">Cambridge First Certificate in English</div>
+        <div class="detail">Grade C · Niveau B2 · 2003</div>
+      </div>
+      <div class="cert-card">
+        <div class="name">AutoCAD Certified User</div>
+        <div class="detail">Autodesk-Zertifizierung</div>
+      </div>
+      <div class="cert-card">
+        <div class="name">Muttersprache</div>
+        <div class="detail">Griechisch</div>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:16px;">Arbeitszeugnisse, Diplom und weitere Nachweise auf Anfrage.</p>
+  </section>
+
+  <section id="portfolio">
+    <div class="sec-head"><span class="flag">Portfolio — Wasserbau-Projekte</span></div>
+    <p class="lead">Vier Referenzprojekte aus meiner Tätigkeit als Consulting Engineer bei Hydroelectrica (2014–2016), Griechenland. Details zum Ein-/Ausklappen.</p>
+
+    <div class="acc-item">
+      <div class="acc-head" onclick="toggleAcc(this)">
+        <div><span class="title">Trinkwasser-Transportleitung Xylokastro–Evrostini</span><span class="meta">DEYA Xylokastro-Evrostini · Region Korinth, GR · 2015</span></div>
+        <span class="chev">▾</span>
+      </div>
+      <div class="acc-body">
+        <p>Neue Trinkwasser-Transportleitung von einer Bohrung (Chouni) zu vier Ortsteilen der östlichen Küstenzone, ausgelegt bis zum Zieljahr 2051.</p>
+        <table class="facts">
+          <tr><td>Leitungslänge</td><td>11'785 m (Hauptleitung) + 620 m Stichleitung</td></tr>
+          <tr><td>Material / Dimension</td><td>PE 100 (HDPE), DN 200 / PN 16, EN 12201-2</td></tr>
+          <tr><td>Bemessungsdurchfluss</td><td>100 m³/h (≈ 2'400 m³/Tag)</td></tr>
+          <tr><td>Höhendifferenz</td><td>+821 m bis +85 m ü. M.</td></tr>
+          <tr><td>Bauwerke</td><td>10 Entlüftungs-, 7 Entleerungs-, 6 Druckminderschächte</td></tr>
+          <tr><td>Kostenvoranschlag</td><td>≈ 1,33 Mio. Euro (inkl. MwSt.)</td></tr>
+          <tr><td>Meine Rolle</td><td>Zeichnerische Ausarbeitung, hydraulische Kurzberechnung, Mengenermittlung &amp; Kostenvoranschlag</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-head" onclick="toggleAcc(this)">
+        <div><span class="title">Erneuerung des Wasserverteilnetzes Kalamata</span><span class="meta">ΔΕΥΑΚ Kalamata · Griechenland · 2013</span></div>
+        <span class="chev">▾</span>
+      </div>
+      <div class="acc-body">
+        <p>Ersatz sämtlicher Asbestzementleitungen im städtischen Wasserverteilnetz von Kalamata (≈ 84'500 Einwohner) durch PE-Druckrohre.</p>
+        <table class="facts">
+          <tr><td>Netzlänge</td><td>≈ 70 km Hauptleitungen, zwei Druckzonen</td></tr>
+          <tr><td>Bemessungsdurchfluss</td><td>631 l/s (150 l/s Hoch-, 481 l/s Tiefzone)</td></tr>
+          <tr><td>Neue Leitungen</td><td>PE 100, DN 90 – DN 225, PN 10</td></tr>
+          <tr><td>Berechnungssoftware</td><td>WaterCAD (Haestad Methods)</td></tr>
+          <tr><td>Löschwasseranforderung</td><td>30 l/s bei min. 10 m Druck am Hydranten</td></tr>
+          <tr><td>Meine Rolle</td><td>Netzpläne, Darstellung hydraulischer Daten, Mitwirkung an Technischem Bericht &amp; hydraulischen Berechnungen</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-head" onclick="toggleAcc(this)">
+        <div><span class="title">Abwasserreinigungsanlage (ARA) Levidiou</span><span class="meta">Gemeinde Tripoli, Region Arkadien, GR · 2015</span></div>
+        <span class="chev">▾</span>
+      </div>
+      <div class="acc-body">
+        <p>Ausschreibungsunterlagen für eine neue Kläranlage im Modell Planung + Bau (Design-Build), mit Membranbioreaktor (MBR) als biologisches Reinigungsverfahren.</p>
+        <table class="facts">
+          <tr><td>Verfahren</td><td>Membranbioreaktor (MBR)</td></tr>
+          <tr><td>Anzahl Baulose</td><td>13 (Zulauf bis Ableitungsleitung)</td></tr>
+          <tr><td>Gesamtkosten (Studie)</td><td>≈ 4,46 Mio. Euro (inkl. MwSt.)</td></tr>
+          <tr><td>Unterlagen</td><td>ESY, MBR-Anhang, Planungsreglement, techn. Spezifikationen, Leistungsverzeichnis</td></tr>
+          <tr><td>Meine Rolle</td><td>Zeichnerische Aufbereitung, Ausschreibungspläne, Kostenvoranschlag je Baulos</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-head" onclick="toggleAcc(this)">
+        <div><span class="title">Hochwasserschutzkonzept Poros</span><span class="meta">Gemeinde Poros, Region Attika, GR · 2015</span></div>
+        <span class="chev">▾</span>
+      </div>
+      <div class="acc-body">
+        <p>Sofortmassnahmen nach dem Unwetter vom Dezember 2014, hydraulische Modellierung und Gerinneausbau im Gebiet Synikismos.</p>
+        <table class="facts">
+          <tr><td>Berechnungssoftware</td><td>HEC-RAS (US Army Corps of Engineers)</td></tr>
+          <tr><td>Bemessungsabfluss</td><td>11,3 m³/s (Wiederkehrperiode 50 Jahre)</td></tr>
+          <tr><td>Neuer Durchlass</td><td>Box-Culvert, Breite 5 m, Höhe 2,0 – 2,3 m</td></tr>
+          <tr><td>Böschungssicherung</td><td>Drahtschotterkörbe (Gabionen), Höhe 1,5 – 2,5 m</td></tr>
+          <tr><td>Einzugsgebiet</td><td>1,06 km²</td></tr>
+          <tr><td>Meine Rolle</td><td>Quer-/Längsschnitte, Detailpläne Durchlass &amp; Gabionen, Mengenermittlung &amp; Kostenvoranschlag</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="kontakt">
+  <div class="wrap">
+    <p><strong>Elissavet Dimitriou</strong> · 8038 Zürich, Schweiz</p>
+    <p><a href="mailto:elisabetdim@gmail.com">elisabetdim@gmail.com</a> · +41 78 742 63 25</p>
+  </div>
+</footer>
+
+<a href="#profil" class="btn-top" id="topBtn" aria-label="Nach oben">↑</a>
+
+<script>
+  function toggleAcc(head){
+    const item = head.parentElement;
+    const body = item.querySelector('.acc-body');
+    const isOpen = item.classList.contains('open');
+    if (isOpen){
+      body.style.maxHeight = null;
+      item.classList.remove('open');
+    } else {
+      item.classList.add('open');
+      body.style.maxHeight = body.scrollHeight + 40 + 'px';
+    }
+  }
+  window.addEventListener('scroll', function(){
+    const btn = document.getElementById('topBtn');
+    if (window.scrollY > 400){ btn.classList.add('show'); } else { btn.classList.remove('show'); }
+  });
+</script>
+
+</body>
+</html>
