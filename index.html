@@ -130,7 +130,10 @@
   .tag{
     display:inline-block; background:#fdeceb; color:var(--red-dark); border:1px solid #f6c9c5;
     border-radius:2px; padding:4px 12px; font-size:.8rem; margin:3px 5px 3px 0; font-weight:500;
+    text-decoration:none;
   }
+  a.tag{cursor:pointer; transition:background .15s ease, border-color .15s ease;}
+  a.tag:hover{background:#fbdad7; border-color:var(--red);}
 
   .skills-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:4px;}
   @media (max-width:640px){ .skills-grid{grid-template-columns:1fr;} }
@@ -297,7 +300,7 @@
         <span class="tag">WEST</span>
         <span class="tag">Excel / M365</span>
         <span class="tag">Google Workspace</span>
-        <span class="tag">Tableau</span>
+        <a class="tag" href="https://public.tableau.com/app/profile/99vizballons/vizzes" target="_blank" rel="noopener noreferrer" title="Meine Tableau-Visualisierungen ansehen">Tableau ↗</a>
         <span class="tag">Sisense</span>
         <span class="tag">Asana / Jira / Confluence</span>
         <span class="tag">Miro</span>
