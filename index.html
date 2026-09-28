@@ -160,6 +160,17 @@
     clip-path: polygon(0 0, 85% 0, 100% 25%, 100% 100%, 0 100%);
   }
   .btn-top.show{opacity:1; pointer-events:auto;}
+
+  /* Language switch */
+  nav.tabs .lang{margin-left:auto; display:flex; align-items:center; gap:0; padding-left:12px; position:sticky; right:0; background:#fff; box-shadow:-10px 0 10px -6px rgba(255,255,255,1);}
+  @media (max-width:760px){ nav.tabs .wrap{padding-right:0;} nav.tabs .lang{padding-right:16px;} }
+  nav.tabs .lang button{
+    background:none; border:1px solid var(--border); color:var(--gray); cursor:pointer;
+    font-family:"Barlow Condensed", Arial, sans-serif; font-weight:700; font-size:.85rem; letter-spacing:.4px;
+    padding:5px 10px; margin:0;
+  }
+  nav.tabs .lang button + button{border-left:none;}
+  nav.tabs .lang button[aria-pressed="true"]{background:var(--red); border-color:var(--red); color:#fff;}
 </style>
 </head>
 <body>
@@ -169,144 +180,148 @@
     <div class="brand">
       <h1>Elissavet Dimitriou</h1>
       <span class="divider"></span>
-      <span class="role">Bauingenieurin · Planung, CAD &amp; Projektleitung</span>
+      <span class="role" data-en="Civil Engineer · Design, CAD &amp;amp; Project Management">Bauingenieurin · Planung, CAD &amp; Projektleitung</span>
     </div>
     <div class="top-contact">
       <span class="email-obf" data-u="elisabetdim" data-d="gmail.com"></span>
       <span>+41 78 742 63 25</span>
-      <span>8038 Zürich</span>
+      <span data-en="8038 Zurich">8038 Zürich</span>
     </div>
   </div>
 </header>
 
 <nav class="tabs">
   <div class="wrap">
-    <a href="#profil">Profil</a>
-    <a href="#erfahrung">Erfahrung</a>
-    <a href="#ausbildung">Ausbildung</a>
-    <a href="#kompetenzen">Kompetenzen</a>
-    <a href="#zertifikate">Zertifikate</a>
+    <a href="#profil" data-en="Profile">Profil</a>
+    <a href="#erfahrung" data-en="Experience">Erfahrung</a>
+    <a href="#ausbildung" data-en="Education">Ausbildung</a>
+    <a href="#kompetenzen" data-en="Competencies">Kompetenzen</a>
+    <a href="#zertifikate" data-en="Certificates">Zertifikate</a>
     <a href="#portfolio">Portfolio</a>
-    <a href="#kontakt">Kontakt</a>
+    <a href="#kontakt" data-en="Contact">Kontakt</a>
+      <div class="lang" role="group" aria-label="Sprache / Language">
+      <button type="button" data-set-lang="de" aria-pressed="true">DE</button>
+      <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+    </div>
   </div>
 </nav>
 
 <div class="tagline-strip">
   <div class="wrap">
-    <p>Projekte von der Machbarkeitsstudie bis zur Realisierung begleiten und mit präziser Planarbeit die Grundlage für Vorhaben schaffen, die Siedlungsräume und Landschaften verändern.</p>
+    <p data-en="Supporting projects from feasibility study to completion, and laying the groundwork with precise drafting for projects that shape towns and landscapes.">Projekte von der Machbarkeitsstudie bis zur Realisierung begleiten und mit präziser Planarbeit die Grundlage für Vorhaben schaffen, die Siedlungsräume und Landschaften verändern.</p>
   </div>
 </div>
 
 <main class="wrap">
 
   <section id="profil">
-    <div class="sec-head"><span class="flag">Profil</span></div>
+    <div class="sec-head"><span class="flag" data-en="Profile">Profil</span></div>
     <div class="profile-card">
-      <p>Bauingenieurin (NTUA Athen, 5-jähriges Diplomstudium) mit Planungs- und CAD-Erfahrung in Wasserversorgung, Abwasserreinigung und Hochwasserschutz sowie mehrjähriger Führungserfahrung im Operations Management. Exakte, strukturierte Plan- und Berechnungsarbeit, sicher an den Schnittstellen zwischen Ingenieurwesen, Beschaffung und Kunden — in drei Sprachen.</p>
-      <p>Nach einer bewussten beruflichen Auszeit zur Kinderbetreuung befinde ich mich im gezielten Wiedereinstieg — idealerweise mit einem Pensum von 60&nbsp;%.</p>
+      <p data-en="Civil engineer (NTUA Athens, 5-year Diploma) with design and CAD experience in water supply, wastewater and flood protection projects, combined with five years of team leadership in operations management. Precise, structured drafting and calculation work, comfortable across engineering, procurement and client interfaces in three languages.">Bauingenieurin (NTUA Athen, 5-jähriges Diplomstudium) mit Planungs- und CAD-Erfahrung in Wasserversorgung, Abwasserreinigung und Hochwasserschutz sowie mehrjähriger Führungserfahrung im Operations Management. Exakte, strukturierte Plan- und Berechnungsarbeit, sicher an den Schnittstellen zwischen Ingenieurwesen, Beschaffung und Kunden — in drei Sprachen.</p>
+      <p data-en="Following a deliberate career break for childcare, now in a structured return to engineering practice — ideally at 60&amp;nbsp;%.">Nach einer bewussten beruflichen Auszeit zur Kinderbetreuung befinde ich mich im gezielten Wiedereinstieg — idealerweise mit einem Pensum von 60&nbsp;%.</p>
     </div>
   </section>
 
   <section id="erfahrung">
-    <div class="sec-head"><span class="flag">Berufserfahrung</span></div>
-    <p class="lead">Zum Ein-/Ausklappen auf einen Eintrag klicken.</p>
+    <div class="sec-head"><span class="flag" data-en="Professional Experience">Berufserfahrung</span></div>
+    <p class="lead" data-en="Click an entry to expand or collapse it.">Zum Ein-/Ausklappen auf einen Eintrag klicken.</p>
 
     <div class="acc-item">
       <div class="acc-head" onclick="toggleAcc(this)">
-        <div><span class="title">Familienmanagement — berufliche Auszeit</span><span class="meta">seit 09.2024</span></div>
+        <div><span class="title" data-en="Family Management — career break">Familienmanagement — berufliche Auszeit</span><span class="meta" data-en="09.2024 – present">seit 09.2024</span></div>
         <span class="chev">▾</span>
       </div>
       <div class="acc-body">
-        <p>Bewusste berufliche Auszeit zur Betreuung meiner zwei kleinen Kinder. Aktuell im strukturierten beruflichen Wiedereinstieg, idealerweise mit einem Pensum von 60&nbsp;%.</p>
+        <p data-en="Deliberate career break to care for two young children. Now in a structured return to engineering practice, ideally at a 60&amp;nbsp;% workload.">Bewusste berufliche Auszeit zur Betreuung meiner zwei kleinen Kinder. Aktuell im strukturierten beruflichen Wiedereinstieg, idealerweise mit einem Pensum von 60&nbsp;%.</p>
       </div>
     </div>
 
     <div class="acc-item">
       <div class="acc-head" onclick="toggleAcc(this)">
-        <div><span class="title">Operations Manager — VIU Ventures AG, Zürich</span><span class="meta">09.2019 – 09.2024</span></div>
+        <div><span class="title" data-en="Operations Manager — VIU Ventures AG, Zurich">Operations Manager — VIU Ventures AG, Zürich</span><span class="meta">09.2019 – 09.2024</span></div>
         <span class="chev">▾</span>
       </div>
       <div class="acc-body">
-        <p>Führung eines sechsköpfigen Teams, verantwortlich für zentrale Geschäftsprozesse in Warenlogistik und Versand.</p>
+        <p data-en="Led a team of six, accountable for core business processes in warehouse logistics and shipping.">Führung eines sechsköpfigen Teams, verantwortlich für zentrale Geschäftsprozesse in Warenlogistik und Versand.</p>
         <ul>
-          <li>Steuerung von Bestandsmanagement, Qualitätskontrolle und Filialnachschub in der Schweiz</li>
-          <li>Koordination zahlreicher interner und externer Schnittstellen</li>
-          <li>Arbeitszeugnis bestätigt selbständige, exakte Arbeitsweise und Erwartungen «stets in jeder Hinsicht übertroffen»</li>
+          <li data-en="Drove inventory management, quality control and store restocking across Switzerland">Steuerung von Bestandsmanagement, Qualitätskontrolle und Filialnachschub in der Schweiz</li>
+          <li data-en="Coordinated numerous internal and external interfaces (suppliers, retail, logistics partners)">Koordination zahlreicher interner und externer Schnittstellen</li>
+          <li data-en="Reference letter confirms an independent, precise way of working and expectations “consistently exceeded in every respect”">Arbeitszeugnis bestätigt selbständige, exakte Arbeitsweise und Erwartungen «stets in jeder Hinsicht übertroffen»</li>
         </ul>
       </div>
     </div>
 
     <div class="acc-item">
       <div class="acc-head" onclick="toggleAcc(this)">
-        <div><span class="title">Sabbatical — Umzug in die Schweiz</span><span class="meta">2016 – 2019</span></div>
+        <div><span class="title" data-en="Sabbatical — relocation to Switzerland">Sabbatical — Umzug in die Schweiz</span><span class="meta">2016 – 2019</span></div>
         <span class="chev">▾</span>
       </div>
       <div class="acc-body">
-        <p>Umzug von Griechenland in die Schweiz, Deutsch von Grund auf bis Niveau B2 gelernt (telc, 2017) sowie ausgedehnte Reisen.</p>
+        <p data-en="Relocation from Greece to Switzerland, learning German from scratch to B2 level (telc, 2017) and extended travel.">Umzug von Griechenland in die Schweiz, Deutsch von Grund auf bis Niveau B2 gelernt (telc, 2017) sowie ausgedehnte Reisen.</p>
       </div>
     </div>
 
     <div class="acc-item">
       <div class="acc-head" onclick="toggleAcc(this)">
-        <div><span class="title">Consulting Engineer — Hydroelectrica, Athen</span><span class="meta">2014 – 2016</span></div>
+        <div><span class="title" data-en="Consulting Engineer — Hydroelectrica, Athens">Consulting Engineer — Hydroelectrica, Athen</span><span class="meta">2014 – 2016</span></div>
         <span class="chev">▾</span>
       </div>
       <div class="acc-body">
-        <p>Konzeption und Ausarbeitung technischer Studien sowie Beantwortung von Ausschreibungen (RFPs) und öffentlichen Vergabeverfahren.</p>
+        <p data-en="Conception and compilation of engineering studies; responses to RFPs and public tender procedures.">Konzeption und Ausarbeitung technischer Studien sowie Beantwortung von Ausschreibungen (RFPs) und öffentlichen Vergabeverfahren.</p>
         <ul>
-          <li>Mitwirkung an mehreren Ingenieurprojekten für öffentliche Wasserversorgungsnetze und Abwasserreinigungsanlagen</li>
-          <li>Gesamtbudget der begleiteten Projekte: ca. 6,5 Mio. Euro</li>
-          <li>Vier Referenzprojekte dieser Zeit sind unter <a href="#portfolio">Portfolio</a> im Detail dargestellt</li>
+          <li data-en="Contributed to multiple design projects for public water supply networks and wastewater treatment plants">Mitwirkung an mehreren Ingenieurprojekten für öffentliche Wasserversorgungsnetze und Abwasserreinigungsanlagen</li>
+          <li data-en="Total budget of projects supported: approx. € 6.5 m">Gesamtbudget der begleiteten Projekte: ca. 6,5 Mio. Euro</li>
+          <li data-en="Four reference projects from this period are detailed under &lt;a href=&quot;#portfolio&quot;&gt;Portfolio&lt;/a&gt;">Vier Referenzprojekte dieser Zeit sind unter <a href="#portfolio">Portfolio</a> im Detail dargestellt</li>
         </ul>
       </div>
     </div>
 
     <div class="acc-item">
       <div class="acc-head" onclick="toggleAcc(this)">
-        <div><span class="title">Kundennahe Nebentätigkeiten — diverse Arbeitgeber, Athen</span><span class="meta">2009 – 2012 (Studium)</span></div>
+        <div><span class="title" data-en="Customer-Facing Roles — various employers, Athens">Kundennahe Nebentätigkeiten — diverse Arbeitgeber, Athen</span><span class="meta" data-en="2009 – 2012 (during studies)">2009 – 2012 (Studium)</span></div>
         <span class="chev">▾</span>
       </div>
       <div class="acc-body">
-        <p>Teilzeittätigkeiten während des Studiums:</p>
+        <p data-en="Part-time work alongside studies:">Teilzeittätigkeiten während des Studiums:</p>
         <ul>
           <li>Transport Survey Assistant (Diavasi Ltd.)</li>
-          <li>Interviewerin, griechisches Statistikamt (EL.STAT.)</li>
-          <li>Verkauf im Einzelhandel</li>
+          <li data-en="Interviewer, Hellenic Statistical Authority (EL.STAT.)">Interviewerin, griechisches Statistikamt (EL.STAT.)</li>
+          <li data-en="Retail sales">Verkauf im Einzelhandel</li>
         </ul>
       </div>
     </div>
   </section>
 
   <section id="ausbildung">
-    <div class="sec-head"><span class="flag">Ausbildung</span></div>
+    <div class="sec-head"><span class="flag" data-en="Education">Ausbildung</span></div>
     <div class="profile-card">
       <table class="facts">
-        <tr><td>Abschluss</td><td>Diplom-Bauingenieurin (5-jähriges Diplomstudium)</td></tr>
-        <tr><td>Hochschule</td><td>Nationale Technische Universität Athen (NTUA)</td></tr>
-        <tr><td>Vertiefung</td><td>Verkehrswesen und Infrastruktur</td></tr>
-        <tr><td>Abschlussjahr</td><td>2014</td></tr>
+        <tr><td data-en="Degree">Abschluss</td><td data-en="Diploma in Civil Engineering (5-year)">Diplom-Bauingenieurin (5-jähriges Diplomstudium)</td></tr>
+        <tr><td data-en="University">Hochschule</td><td data-en="National Technical University of Athens (NTUA)">Nationale Technische Universität Athen (NTUA)</td></tr>
+        <tr><td data-en="Specialization">Vertiefung</td><td data-en="Transport Engineering and Infrastructure">Verkehrswesen und Infrastruktur</td></tr>
+        <tr><td data-en="Year of graduation">Abschlussjahr</td><td>2014</td></tr>
       </table>
     </div>
   </section>
 
   <section id="kompetenzen">
-    <div class="sec-head"><span class="flag">Kompetenzen</span></div>
+    <div class="sec-head"><span class="flag" data-en="Competencies">Kompetenzen</span></div>
     <div class="skills-grid">
       <div class="box">
-        <h3>Fachliche &amp; methodische Kompetenzen</h3>
-        <span class="tag">Teamführung</span>
-        <span class="tag">Projektmanagement</span>
-        <span class="tag">Qualitätssicherung</span>
+        <h3 data-en="Professional &amp;amp; Methodological">Fachliche &amp; methodische Kompetenzen</h3>
+        <span class="tag" data-en="Team Leadership">Teamführung</span>
+        <span class="tag" data-en="Project Management">Projektmanagement</span>
+        <span class="tag" data-en="Quality Assurance">Qualitätssicherung</span>
         <span class="tag">Data Analytics</span>
-        <span class="tag">Beschaffung</span>
+        <span class="tag" data-en="Procurement">Beschaffung</span>
         <span class="tag">Supply Chain</span>
         <span class="tag">Change Management</span>
-        <span class="tag">Konfliktmanagement</span>
+        <span class="tag" data-en="Conflict Management">Konfliktmanagement</span>
       </div>
       <div class="box">
         <h3>Software &amp; Tools</h3>
         <span class="tag">AutoCAD (Certified User)</span>
-        <span class="tag">ALLPLAN (Grundkenntnisse)</span>
+        <span class="tag" data-en="ALLPLAN (Beginner)">ALLPLAN (Grundkenntnisse)</span>
         <span class="tag">HEC-RAS</span>
         <span class="tag">WEST</span>
         <span class="tag">WaterCAD</span>
@@ -324,100 +339,100 @@
   </section>
 
   <section id="zertifikate">
-    <div class="sec-head"><span class="flag">Zertifikate &amp; Sprachen</span></div>
+    <div class="sec-head"><span class="flag" data-en="Certificates &amp;amp; Languages">Zertifikate &amp; Sprachen</span></div>
     <div class="cert-grid">
       <div class="cert-card">
         <div class="name">telc Deutsch B2</div>
-        <div class="detail">Prädikat «Gut» (253/300 Punkte) · 2017</div>
+        <div class="detail" data-en="Grade “Gut” (good) · 253/300 points · 2017">Prädikat «Gut» (253/300 Punkte) · 2017</div>
       </div>
       <div class="cert-card">
         <div class="name">Cambridge First Certificate in English</div>
-        <div class="detail">Note C · Niveau B2 · 2003</div>
+        <div class="detail" data-en="Grade C · Level B2 · 2003">Note C · Niveau B2 · 2003</div>
       </div>
       <div class="cert-card">
         <div class="name">AutoCAD Certified User</div>
-        <div class="detail">Autodesk-Zertifizierung</div>
+        <div class="detail" data-en="Autodesk certification">Autodesk-Zertifizierung</div>
       </div>
       <div class="cert-card">
-        <div class="name">Muttersprache</div>
-        <div class="detail">Griechisch</div>
+        <div class="name" data-en="Native language">Muttersprache</div>
+        <div class="detail" data-en="Greek">Griechisch</div>
       </div>
     </div>
-    <p class="lead" style="margin-top:16px;">Arbeitszeugnisse, Diplom und weitere Nachweise auf Anfrage.</p>
+    <p class="lead" style="margin-top:16px;" data-en="Reference letters, diploma and further supporting documents available on request.">Arbeitszeugnisse, Diplom und weitere Nachweise auf Anfrage.</p>
   </section>
 
   <section id="portfolio">
-    <div class="sec-head"><span class="flag">Portfolio — Referenzprojekte</span></div>
-    <p class="lead">Vier Referenzprojekte aus meiner Tätigkeit als Consulting Engineer bei Hydroelectrica (2014–2016), Griechenland — Trinkwasser, Abwasser und Hochwasserschutz. Details zum Ein-/Ausklappen.</p>
+    <div class="sec-head"><span class="flag" data-en="Portfolio — Reference Projects">Portfolio — Referenzprojekte</span></div>
+    <p class="lead" data-en="Four reference projects from my work as Consulting Engineer at Hydroelectrica (2014–2016), Greece — drinking water, wastewater and flood protection. Click to expand details.">Vier Referenzprojekte aus meiner Tätigkeit als Consulting Engineer bei Hydroelectrica (2014–2016), Griechenland — Trinkwasser, Abwasser und Hochwasserschutz. Details zum Ein-/Ausklappen.</p>
 
     <div class="acc-item">
       <div class="acc-head" onclick="toggleAcc(this)">
-        <div><span class="title">Trinkwasser-Transportleitung Xylokastro–Evrostini</span><span class="meta">DEYA Xylokastro-Evrostini · Region Korinth, GR · 2015</span></div>
+        <div><span class="title" data-en="Drinking Water Transmission Main Xylokastro–Evrostini">Trinkwasser-Transportleitung Xylokastro–Evrostini</span><span class="meta" data-en="DEYA Xylokastro-Evrostini · Corinth Region, GR · 2015">DEYA Xylokastro-Evrostini · Region Korinth, GR · 2015</span></div>
         <span class="chev">▾</span>
       </div>
       <div class="acc-body">
-        <p>Neue Trinkwasser-Transportleitung von einer Bohrung (Chouni) zu vier Ortsteilen der östlichen Küstenzone, ausgelegt bis zum Zieljahr 2051.</p>
+        <p data-en="New drinking water transmission main from a borehole (Chouni) to four villages in the eastern coastal zone, designed for the target year 2051.">Neue Trinkwasser-Transportleitung von einer Bohrung (Chouni) zu vier Ortsteilen der östlichen Küstenzone, ausgelegt bis zum Zieljahr 2051.</p>
         <table class="facts">
-          <tr><td>Leitungslänge</td><td>11'785 m (Hauptleitung) + 620 m Stichleitung</td></tr>
-          <tr><td>Material / Dimension</td><td>PE 100 (HDPE), DN 200 / PN 16, EN 12201-2</td></tr>
-          <tr><td>Bemessungsdurchfluss</td><td>100 m³/h (≈ 2'400 m³/Tag)</td></tr>
-          <tr><td>Höhendifferenz</td><td>+821 m bis +85 m ü. M.</td></tr>
-          <tr><td>Bauwerke</td><td>10 Entlüftungs-, 7 Entleerungs-, 6 Druckminderschächte</td></tr>
-          <tr><td>Kostenvoranschlag</td><td>≈ 1,33 Mio. Euro (inkl. MwSt.)</td></tr>
-          <tr><td>Meine Rolle</td><td>Zeichnerische Ausarbeitung, hydraulische Kurzberechnung, Mengenermittlung &amp; Kostenvoranschlag</td></tr>
+          <tr><td data-en="Length">Leitungslänge</td><td data-en="11,785 m (main) + 620 m spur">11'785 m (Hauptleitung) + 620 m Stichleitung</td></tr>
+          <tr><td data-en="Material / size">Material / Dimension</td><td>PE 100 (HDPE), DN 200 / PN 16, EN 12201-2</td></tr>
+          <tr><td data-en="Design flow">Bemessungsdurchfluss</td><td data-en="100 m³/h (≈ 2,400 m³/day)">100 m³/h (≈ 2'400 m³/Tag)</td></tr>
+          <tr><td data-en="Head">Höhendifferenz</td><td data-en="+821 m to +85 m a.s.l.">+821 m bis +85 m ü. M.</td></tr>
+          <tr><td data-en="Structures">Bauwerke</td><td data-en="10 air-valve, 7 drain, 6 pressure-reducing chambers">10 Entlüftungs-, 7 Entleerungs-, 6 Druckminderschächte</td></tr>
+          <tr><td data-en="Cost estimate">Kostenvoranschlag</td><td data-en="≈ € 1.33 m (incl. VAT)">≈ 1,33 Mio. Euro (inkl. MwSt.)</td></tr>
+          <tr><td data-en="My role">Meine Rolle</td><td data-en="Drawings, hydraulic calculation, quantity take-off &amp;amp; cost estimate">Zeichnerische Ausarbeitung, hydraulische Kurzberechnung, Mengenermittlung &amp; Kostenvoranschlag</td></tr>
         </table>
       </div>
     </div>
 
     <div class="acc-item">
       <div class="acc-head" onclick="toggleAcc(this)">
-        <div><span class="title">Erneuerung des Wasserverteilnetzes Kalamata</span><span class="meta">DEYA Kalamata · Griechenland · 2014</span></div>
+        <div><span class="title" data-en="Water Distribution Network Renewal, Kalamata">Erneuerung des Wasserverteilnetzes Kalamata</span><span class="meta" data-en="DEYA Kalamata · Greece · 2014">DEYA Kalamata · Griechenland · 2014</span></div>
         <span class="chev">▾</span>
       </div>
       <div class="acc-body">
-        <p>Ersatz sämtlicher Asbestzementleitungen im städtischen Wasserverteilnetz von Kalamata (≈ 84'500 Einwohner) durch PE-Druckrohre.</p>
+        <p data-en="Replacement of all asbestos-cement mains in the Kalamata urban water distribution network (≈ 84,500 inhabitants) with PE pressure pipes.">Ersatz sämtlicher Asbestzementleitungen im städtischen Wasserverteilnetz von Kalamata (≈ 84'500 Einwohner) durch PE-Druckrohre.</p>
         <table class="facts">
-          <tr><td>Netzlänge</td><td>≈ 70 km Hauptleitungen, zwei Druckzonen</td></tr>
-          <tr><td>Bemessungsdurchfluss</td><td>631 l/s (150 l/s Hoch-, 481 l/s Tiefzone)</td></tr>
-          <tr><td>Neue Leitungen</td><td>PE 100, DN 90 – DN 225, PN 10</td></tr>
-          <tr><td>Berechnungssoftware</td><td>WaterCAD (Haestad Methods)</td></tr>
-          <tr><td>Löschwasseranforderung</td><td>30 l/s bei min. 10 m Druck am Hydranten</td></tr>
-          <tr><td>Meine Rolle</td><td>Netzpläne, Darstellung hydraulischer Daten, Mitwirkung am technischen Bericht &amp; hydraulischen Berechnungen</td></tr>
+          <tr><td data-en="Network">Netzlänge</td><td data-en="≈ 70 km mains, two pressure zones">≈ 70 km Hauptleitungen, zwei Druckzonen</td></tr>
+          <tr><td data-en="Design flow">Bemessungsdurchfluss</td><td data-en="631 l/s (150 l/s high zone, 481 l/s low zone)">631 l/s (150 l/s Hoch-, 481 l/s Tiefzone)</td></tr>
+          <tr><td data-en="New pipes">Neue Leitungen</td><td>PE 100, DN 90 – DN 225, PN 10</td></tr>
+          <tr><td data-en="Software">Berechnungssoftware</td><td>WaterCAD (Haestad Methods)</td></tr>
+          <tr><td data-en="Fire flow">Löschwasseranforderung</td><td data-en="30 l/s at min. 10 m hydrant pressure">30 l/s bei min. 10 m Druck am Hydranten</td></tr>
+          <tr><td data-en="My role">Meine Rolle</td><td data-en="Network plans, hydraulic data presentation, contribution to technical report &amp;amp; hydraulic calculations">Netzpläne, Darstellung hydraulischer Daten, Mitwirkung am technischen Bericht &amp; hydraulischen Berechnungen</td></tr>
         </table>
       </div>
     </div>
 
     <div class="acc-item">
       <div class="acc-head" onclick="toggleAcc(this)">
-        <div><span class="title">Abwasserreinigungsanlage (ARA) Levidiou</span><span class="meta">Gemeinde Tripoli, Region Arkadien, GR · 2015</span></div>
+        <div><span class="title" data-en="Wastewater Treatment Plant Levidiou">Abwasserreinigungsanlage (ARA) Levidiou</span><span class="meta" data-en="Municipality of Tripoli, Arcadia, GR · 2015">Gemeinde Tripoli, Region Arkadien, GR · 2015</span></div>
         <span class="chev">▾</span>
       </div>
       <div class="acc-body">
-        <p>Ausschreibungsunterlagen für eine neue Kläranlage im Modell Planung + Bau (Design-Build), mit Membranbioreaktor (MBR) als biologisches Reinigungsverfahren.</p>
+        <p data-en="Tender documentation for a new treatment plant under a design–build model, with a membrane bioreactor (MBR) as the biological treatment process.">Ausschreibungsunterlagen für eine neue Kläranlage im Modell Planung + Bau (Design-Build), mit Membranbioreaktor (MBR) als biologisches Reinigungsverfahren.</p>
         <table class="facts">
-          <tr><td>Verfahren</td><td>Membranbioreaktor (MBR)</td></tr>
-          <tr><td>Anzahl Baulose</td><td>13 (Zulauf bis Ableitungsleitung)</td></tr>
-          <tr><td>Gesamtkosten (Studie)</td><td>≈ 4,46 Mio. Euro (inkl. MwSt.)</td></tr>
-          <tr><td>Unterlagen</td><td>Besondere Vertragsbedingungen, MBR-Anhang, Planungsreglement, techn. Spezifikationen, Leistungsverzeichnis</td></tr>
-          <tr><td>Meine Rolle</td><td>Zeichnerische Aufbereitung, Ausschreibungspläne, Kostenvoranschlag je Baulos</td></tr>
+          <tr><td data-en="Process">Verfahren</td><td data-en="Membrane bioreactor (MBR)">Membranbioreaktor (MBR)</td></tr>
+          <tr><td data-en="Work packages">Anzahl Baulose</td><td data-en="13 (inlet through discharge line)">13 (Zulauf bis Ableitungsleitung)</td></tr>
+          <tr><td data-en="Total cost (study)">Gesamtkosten (Studie)</td><td data-en="≈ € 4.46 m (incl. VAT)">≈ 4,46 Mio. Euro (inkl. MwSt.)</td></tr>
+          <tr><td data-en="Documents">Unterlagen</td><td data-en="Special conditions, MBR annex, design rules, technical specifications, bill of quantities">Besondere Vertragsbedingungen, MBR-Anhang, Planungsreglement, techn. Spezifikationen, Leistungsverzeichnis</td></tr>
+          <tr><td data-en="My role">Meine Rolle</td><td data-en="Drafting, tender drawings, cost estimate per work package">Zeichnerische Aufbereitung, Ausschreibungspläne, Kostenvoranschlag je Baulos</td></tr>
         </table>
       </div>
     </div>
 
     <div class="acc-item">
       <div class="acc-head" onclick="toggleAcc(this)">
-        <div><span class="title">Hochwasserschutzkonzept Poros</span><span class="meta">Gemeinde Poros, Region Attika, GR · 2015</span></div>
+        <div><span class="title" data-en="Flood Protection Concept Poros">Hochwasserschutzkonzept Poros</span><span class="meta" data-en="Municipality of Poros, Attica, GR · 2015">Gemeinde Poros, Region Attika, GR · 2015</span></div>
         <span class="chev">▾</span>
       </div>
       <div class="acc-body">
-        <p>Sofortmassnahmen nach dem Unwetter vom Dezember 2014, hydraulische Modellierung und Gerinneausbau im Gebiet Synikismos.</p>
+        <p data-en="Immediate measures after the December 2014 storm event: hydraulic modelling and channel improvement in the Synikismos area.">Sofortmassnahmen nach dem Unwetter vom Dezember 2014, hydraulische Modellierung und Gerinneausbau im Gebiet Synikismos.</p>
         <table class="facts">
-          <tr><td>Berechnungssoftware</td><td>HEC-RAS (US Army Corps of Engineers)</td></tr>
-          <tr><td>Bemessungsabfluss</td><td>11,3 m³/s (Wiederkehrperiode 50 Jahre)</td></tr>
-          <tr><td>Neuer Durchlass</td><td>Rechteckdurchlass (Box Culvert), Breite 5 m, Höhe 2,0 – 2,3 m</td></tr>
-          <tr><td>Böschungssicherung</td><td>Drahtschotterkörbe (Gabionen), Höhe 1,5 – 2,5 m</td></tr>
-          <tr><td>Einzugsgebiet</td><td>1,06 km²</td></tr>
-          <tr><td>Meine Rolle</td><td>Quer-/Längsschnitte, Detailpläne Durchlass &amp; Gabionen, Mengenermittlung &amp; Kostenvoranschlag</td></tr>
+          <tr><td data-en="Software">Berechnungssoftware</td><td>HEC-RAS (US Army Corps of Engineers)</td></tr>
+          <tr><td data-en="Design discharge">Bemessungsabfluss</td><td data-en="11.3 m³/s (50-year return period)">11,3 m³/s (Wiederkehrperiode 50 Jahre)</td></tr>
+          <tr><td data-en="New culvert">Neuer Durchlass</td><td data-en="Box culvert, 5 m wide, 2.0 – 2.3 m high">Rechteckdurchlass (Box Culvert), Breite 5 m, Höhe 2,0 – 2,3 m</td></tr>
+          <tr><td data-en="Bank protection">Böschungssicherung</td><td data-en="Gabions, 1.5 – 2.5 m high">Drahtschotterkörbe (Gabionen), Höhe 1,5 – 2,5 m</td></tr>
+          <tr><td data-en="Catchment">Einzugsgebiet</td><td data-en="1.06 km²">1,06 km²</td></tr>
+          <tr><td data-en="My role">Meine Rolle</td><td data-en="Cross/longitudinal sections, culvert &amp;amp; gabion details, quantities &amp;amp; cost estimate">Quer-/Längsschnitte, Detailpläne Durchlass &amp; Gabionen, Mengenermittlung &amp; Kostenvoranschlag</td></tr>
         </table>
       </div>
     </div>
@@ -427,12 +442,12 @@
 
 <footer id="kontakt">
   <div class="wrap">
-    <p><strong>Elissavet Dimitriou</strong> · 8038 Zürich, Schweiz</p>
+    <p data-en="&lt;strong&gt;Elissavet Dimitriou&lt;/strong&gt; · 8038 Zurich, Switzerland"><strong>Elissavet Dimitriou</strong> · 8038 Zürich, Schweiz</p>
     <p><span class="email-obf" data-u="elisabetdim" data-d="gmail.com"></span> · +41 78 742 63 25</p>
   </div>
 </footer>
 
-<a href="#profil" class="btn-top" id="topBtn" aria-label="Nach oben">↑</a>
+<a href="#profil" class="btn-top" id="topBtn" aria-label="Nach oben" data-en-aria="Back to top">↑</a>
 
 <script>
   function toggleAcc(head){
@@ -463,6 +478,56 @@
     link.textContent = address;
     el.appendChild(link);
   });
+
+  // ---- Language switch (DE / EN) ----
+  // German is the source text in the markup; English lives in data-en attributes.
+  // Choice order: ?lang= in URL > saved choice > browser language > German.
+  (function(){
+    var META = {
+      de: { title: document.title,
+            desc: document.querySelector('meta[name="description"]').content },
+      en: { title: 'Elissavet Dimitriou — Civil Engineer · Design, CAD & Project Management',
+            desc: 'Portfolio of Elissavet Dimitriou — civil engineer with experience in design, CAD and project management (water supply, wastewater, flood protection) and operations management.' }
+    };
+    var els = document.querySelectorAll('[data-en]');
+    els.forEach(function(el){ el.setAttribute('data-de', el.innerHTML); });
+    var topBtn = document.getElementById('topBtn');
+    var topDe = topBtn.getAttribute('aria-label');
+
+    function save(l){ try { localStorage.setItem('lang', l); } catch(e){} }
+    function load(){ try { return localStorage.getItem('lang'); } catch(e){ return null; } }
+
+    function apply(l){
+      els.forEach(function(el){ el.innerHTML = el.getAttribute(l === 'en' ? 'data-en' : 'data-de'); });
+      document.documentElement.lang = l;
+      document.title = META[l].title;
+      document.querySelector('meta[name="description"]').content = META[l].desc;
+      topBtn.setAttribute('aria-label', l === 'en' ? topBtn.getAttribute('data-en-aria') : topDe);
+      document.querySelectorAll('[data-set-lang]').forEach(function(b){
+        b.setAttribute('aria-pressed', b.getAttribute('data-set-lang') === l ? 'true' : 'false');
+      });
+      document.querySelectorAll('.acc-item.open .acc-body').forEach(function(b){
+        b.style.maxHeight = b.scrollHeight + 40 + 'px';
+      });
+    }
+
+    var q = new URLSearchParams(location.search).get('lang');
+    var lang = (q === 'en' || q === 'de') ? q : load();
+    if (lang !== 'en' && lang !== 'de'){
+      lang = /^en\b/i.test(navigator.language || '') ? 'en' : 'de';
+    }
+    if (q === 'en' || q === 'de') save(lang);
+    apply(lang);
+
+    document.querySelectorAll('[data-set-lang]').forEach(function(b){
+      b.addEventListener('click', function(){
+        var l = b.getAttribute('data-set-lang');
+        apply(l); save(l);
+        var u = new URL(location.href); u.searchParams.set('lang', l);
+        history.replaceState(null, '', u);
+      });
+    });
+  })();
 </script>
 
 <!-- Cloudflare Web Analytics -->
